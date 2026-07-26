@@ -38,9 +38,12 @@ project confidently answered **"one g"** (the correct answer is 2).
 
 ## Results
 
-- Over a 200-step training run, the mean correctness reward climbed steadily
-  (from ~1.69 to ~1.81 out of a max of 2.0), with ~94% of sampled answers
-  correct late in training.
+- Over a 300-step training run (`num_generations=8`), the mean correctness
+  reward climbed steadily from ~1.30 in the first quarter of training to
+  ~1.84 in the last (out of a max of 2.0) — implied answer accuracy rising
+  from ~77% to ~95%. Because the raw per-step reward is noisy (only 16
+  completions scored per step), the notebook includes a rolling-mean plot
+  and a per-quarter table that make the learning trend explicit.
 - **Before vs after** on the same question ("how many a's in *idea*"): the
   original model answered **3** (wrong); the fine-tuned model spells
   i-d-e-a with a correct running count and answers **1** (right).
